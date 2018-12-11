@@ -48,16 +48,16 @@ namespace Iterations_Drill
             //}
             //Console.ReadLine();
 
-            ////Excercise #5 //THIS DOES NOT WORK
-            //int[] array2 = { 10, 20, 30, 40, 50, 60, 70, 80, 90 };
-            //for (int j = 1; j <= array2.Length; j++)
-            //{
-            //    if (array2[j] <= 50)
-            //    {
-            //        Console.WriteLine("This is a numbers in the array that is 50 or less: " + array2[j]);
-            //    }
-            //}
-            //Console.ReadLine();
+            ////Excercise #5 
+            int[] array2 = { 10, 20, 30, 40, 50, 60, 70, 80, 90 };
+            for (int j = 0; j <= array2.Length - 1; j++)
+            {
+                if (array2[j] <= 50)
+                {
+                    Console.WriteLine("This is a numbers in the array that is 50 or less: " + array2[j]);
+                }
+            }
+            Console.ReadLine();
 
             //////Excersize #6
             //List<string> months = new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
@@ -122,22 +122,22 @@ namespace Iterations_Drill
             ////Console.ReadLine();
 
             ////Exercise #10
-            List<string> sceduleDays = new List<string>() { "Monday", "Wednesday", "Friday", "Monday" };
-            Console.WriteLine("Type Monday");
-            string monday = Console.ReadLine();
-            for (int m = 0; m < sceduleDays.Count; m++)
-            {
-                if (sceduleDays[m] == monday)
-                {
-                    Console.WriteLine(m);
-                }
-                if (monday != "Monday")
-                {
-                    Console.WriteLine("Please make sure to type Monday");
-                    break;
-                }
-            }
-            Console.ReadLine();
+            //List<string> sceduleDays = new List<string>() { "Monday", "Wednesday", "Friday", "Monday" };
+            //Console.WriteLine("Type Monday");
+            //string monday = Console.ReadLine();
+            //for (int m = 0; m < sceduleDays.Count; m++)
+            //{
+            //    if (sceduleDays[m] == monday)
+            //    {
+            //        Console.WriteLine(m);
+            //    }
+            //    if (monday != "Monday")
+            //    {
+            //        Console.WriteLine("Please make sure to type Monday");
+            //        break;
+            //    }
+            //}
+            //Console.ReadLine();
 
             //Exercise #11
             //List<string> days = new List<string>() { "Monday", "Wednesday", "Friday", "Monday", "Saturday", "Friday", "Sunday" };
