@@ -8,23 +8,19 @@ namespace Classes_Drill
 {
     public class Integer
     {
-        //public Integer()
-        //{
-            public Integer()
-        { 
-            int addTwoNumbers(int number1, int number2)
+            int addTwoNumbers(int pick)
             {
-                return number1 + number2;
+                return pick + 10;
             }
-        }
-        public int squared(int number3)
+        
+            int squared(int pick)
             {
-                return number3 * number3;
+                return pick * pick;
             }
 
-           public int multiply(int number4, int number5)
+           int multiply(int pick)
             {
-                return number4 * number5;
+                return pick * 5;
             }
             //public int addTwoNumbers { get; set; }
             //public int squared { get; set; }
