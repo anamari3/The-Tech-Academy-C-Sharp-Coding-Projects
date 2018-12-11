@@ -13,17 +13,12 @@ namespace TryCatch_Drill
             try
             {
                 List<int> numbers = new List<int> { 10, 22, 34, 46, 58, 60, 72, 84, 96 };
-                List<int> picks = new List<int>();
                 Console.WriteLine("Pick a number between 1 and 100");
                 int pick = Convert.ToInt32(Console.ReadLine());
-
-                foreach (int number in numbers)
+                foreach (var number in numbers)
                 {
-                    picks.Add(number / pick);
-                }
-                foreach (int added in picks)
-                {
-                    Console.WriteLine("My number divided by " + pick + " = " + added);
+                    int result = number / pick;
+                    Console.WriteLine(pick + " was the number you selected. " + number + " divided by that number is: " + result);
                 }
             }
             catch (FormatException ex)

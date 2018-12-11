@@ -28,14 +28,13 @@ namespace Iterations_Drill
             ////}
 
             ////Exercise #3
-            ////while (true)
-            ////{
-            ////    Console.WriteLine("Looping...");
-            ////    if (Console.KeyAvailable)
-            ////    {
-            ////        break;
-            ////    }
-            ////}
+            bool tester = true;
+            while (tester == true)
+            {
+                Console.WriteLine("I am no longer infinite!");
+                tester = false;
+            }
+            Console.ReadLine();
 
             ////Exercise #4
             //int[] array1 = { 12, 34, 28, 5, 98, 93, 29, 13 };
