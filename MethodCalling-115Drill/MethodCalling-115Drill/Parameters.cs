@@ -8,7 +8,11 @@ namespace MethodCalling_115Drill
 {
     public class Parameters
     {
-        public static void int Method(int valueA, int valueB = 5)
-            int result = valueA + ValueB; //youre on step 2 of this drill
+        public int Math(int num1, int num2 = 5)
+        {
+            int result = num1 + num2;
+            return result;
+
+        }
     }
 }
