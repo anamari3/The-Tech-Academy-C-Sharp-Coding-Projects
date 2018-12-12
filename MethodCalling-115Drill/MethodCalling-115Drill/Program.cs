@@ -24,7 +24,7 @@ namespace MethodCalling_115Drill
             else
             {
                 int result = parameters.Math(num1: numA);
-                Console.WriteLine("The sum of those two numbers is " + result);
+                Console.WriteLine("The sum of " + numA + " and 5 is " + result);
 
             }
         
