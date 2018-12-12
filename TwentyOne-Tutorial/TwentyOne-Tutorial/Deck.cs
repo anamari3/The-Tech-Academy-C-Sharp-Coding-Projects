@@ -11,11 +11,11 @@ namespace TwentyOne_Tutorial
         public Deck()
         {
             Cards = new List<Card>();
-            //Cards = new List<Card>(); //CREATING MORE EFFICENT SOLUTION WITH FOREACH LOOP
-            //Card cardOne = new Card();
-            //cardOne.Face = "Two";
-            //cardOne.Suit = "Hearts";
-            //Cards.Add(cardOne);
+                                    //Cards = new List<Card>(); //CREATING MORE EFFICENT SOLUTION WITH FOREACH LOOP
+                                    //Card cardOne = new Card();
+                                    //cardOne.Face = "Two";
+                                    //cardOne.Suit = "Hearts";
+                                    //Cards.Add(cardOne);
 
             List<string> Suites = new List<string>() { "Hearts", "Diamonds", "Clubs", "Spades" };
             List<string> Faces = new List<string>()
@@ -37,5 +37,22 @@ namespace TwentyOne_Tutorial
             }
         }
         public List<Card> Cards { get; set; }
+
+        public void Shuffle(int times = 1)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                List<Card> TempList = new List<Card>();
+                Random random = new Random();
+
+                while (Cards.Count > 0)
+                {
+                    int randomIndex = random.Next(0, Cards.Count);
+                    TempList.Add(Cards[randomIndex]);
+                    Cards.RemoveAt(randomIndex);
+                }
+                Cards = TempList;
+            }
+        }
     }
 }
