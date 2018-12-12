@@ -10,22 +10,27 @@ namespace TwentyOne_Tutorial
     {
         static void Main(string[] args)
         {
-            Deck deck = new Deck();
-            deck.Shuffle(3);
-                                                    //deck.Cards = new List<Card>(); //REMOVING TO CREAT CONSTRUCTOR
-
-                                                    //Card cardOne = new Card();
-                                                    //cardOne.Face = "Queen";
-                                                    //cardOne.Suit = "Spades";
-
-                                                    //deck.Cards.Add(cardOne);
-
-            foreach (Card card in deck.Cards)
-            {
-                Console.WriteLine(card.Face + " of " + card.Suit);
-            }
-            Console.WriteLine(deck.Cards.Count);
+            TwentyOneGame game = new TwentyOneGame();
+            game.Players = new List<string>() { "Jesse", "Bill", "Joe" };
+            game.ListPlayers();
             Console.ReadLine();
+
+            //Deck deck = new Deck();
+            //deck.Shuffle(3);
+            //                                        //deck.Cards = new List<Card>(); //REMOVING TO CREATE CONSTRUCTOR
+
+            //                                        //Card cardOne = new Card();
+            //                                        //cardOne.Face = "Queen";
+            //                                        //cardOne.Suit = "Spades";
+
+            //                                        //deck.Cards.Add(cardOne);
+
+            //foreach (Card card in deck.Cards)
+            //{
+            //    Console.WriteLine(card.Face + " of " + card.Suit);
+            //}
+            //Console.WriteLine(deck.Cards.Count);
+            //Console.ReadLine();
         }
 
                                                     //public static Deck Shuffle(Deck deck, out int timesShuffled, int times = 1)
