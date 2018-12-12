@@ -10,6 +10,10 @@ namespace Inherit_120Drill
     {
         static void Main(string[] args)
         {
+            Employee employee = new Employee();
+            employee.SayName(FirstName: "Sample ", LastName: "Student");
+            Console.ReadLine();
         }
+        
     }
 }
