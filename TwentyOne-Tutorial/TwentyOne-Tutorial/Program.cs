@@ -10,13 +10,14 @@ namespace TwentyOne_Tutorial
     {
         static void Main(string[] args)
         {
-            TwentyOneGame game = new TwentyOneGame();
-            game.Players = new List<string>() { "Jesse", "Bill", "Joe" };
-            game.ListPlayers();
-            Console.ReadLine();
+                                                    //TwentyOneGame game = new TwentyOneGame(); //DEMONSTRATING INHERETENCE
+                                                    //game.Players = new List<string>() { "Jesse", "Bill", "Joe" };
+                                                    //game.ListPlayers();
+                                                    //Console.ReadLine();
+                                                    //game.Play();
 
-            //Deck deck = new Deck();
-            //deck.Shuffle(3);
+            Deck deck = new Deck();
+            deck.Shuffle(3);
             //                                        //deck.Cards = new List<Card>(); //REMOVING TO CREATE CONSTRUCTOR
 
             //                                        //Card cardOne = new Card();
@@ -25,12 +26,12 @@ namespace TwentyOne_Tutorial
 
             //                                        //deck.Cards.Add(cardOne);
 
-            //foreach (Card card in deck.Cards)
-            //{
-            //    Console.WriteLine(card.Face + " of " + card.Suit);
-            //}
-            //Console.WriteLine(deck.Cards.Count);
-            //Console.ReadLine();
+            foreach (Card card in deck.Cards)
+            {
+                Console.WriteLine(card.Face + " of " + card.Suit);
+            }
+            Console.WriteLine(deck.Cards.Count);
+            Console.ReadLine();
         }
 
                                                     //public static Deck Shuffle(Deck deck, out int timesShuffled, int times = 1)
