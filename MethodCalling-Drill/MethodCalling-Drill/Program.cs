@@ -11,11 +11,11 @@ namespace MethodCalling_Drill
         public static void Main(string[] args)
         {
             Operation operation = new Operation(); //instantiate
-            operation.Power(12);
+            operation.Math(12);
 
-            operation.Divide(100.20m);
+            operation.Math(100.20m);
 
-            operation.Addition("15");
+            operation.Math("15");
 
             Console.ReadLine();
             

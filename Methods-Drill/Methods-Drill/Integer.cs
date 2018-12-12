@@ -20,11 +20,7 @@ namespace Methods_Drill
 
         public int Adding(int num1, int num2)
         {
-            int addResult;
-            if (num1 != num2)
-                addResult = num1 + num2;
-            else
-                addResult = num1 + num1;
+            int addResult = num1 + num2;
             return addResult;
         }
 

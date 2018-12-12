@@ -8,7 +8,7 @@ namespace MethodCalling_Drill
 {
     public class Operation
     {
-        public int Power(int num1)
+        public int Math(int num1)
         {
             int result = num1 * num1;
             Console.WriteLine(num1 + " to the second power is " + result);
@@ -16,7 +16,7 @@ namespace MethodCalling_Drill
 
         }
 
-        public decimal Divide (decimal num2)
+        public decimal Math (decimal num2)
         {
             int new2 = decimal.ToInt32(num2);
             int result = new2 / 3;
@@ -24,7 +24,7 @@ namespace MethodCalling_Drill
             return result;
         }
 
-        public string Addition (string num3)
+        public string Math (string num3)
         {
             int new3 = Convert.ToInt32(num3);
             int result = new3 + 20;

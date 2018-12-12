@@ -18,7 +18,7 @@ namespace MethodPractice_Drill
             Console.WriteLine("Pick another number:");
             int b = Convert.ToInt32(Console.ReadLine());
 
-            madeUpName.DoMath(a, b);
+            madeUpName.DoMath(num1: a, num2: b);
             Console.ReadLine();
         }
     }
