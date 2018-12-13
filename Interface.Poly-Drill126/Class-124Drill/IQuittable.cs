@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Class_124Drill
 {
-    class Person
+    interface IQuittable
     {
+        void Quit();
     }
 }

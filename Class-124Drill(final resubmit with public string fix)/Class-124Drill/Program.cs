@@ -10,10 +10,11 @@ namespace Class_124Drill
     {
         static void Main(string[] args)
         {
-            Employee employee = new Employee();
-            employee.firstName = "Sample";
-            employee.lastName = "Student";
-            employee.SayName();
+            IQuittable employee = new Employee();
+            //employee.firstName = "Sample";
+            //employee.lastName = "Student";
+            //employee.SayName();
+            employee.Quit();
         }
     }
 }
