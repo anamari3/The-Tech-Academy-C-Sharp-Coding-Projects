@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OverloadOperator_129Drill
+namespace Class_124Drill
 {
-    class Person
+    public abstract class Person
     {
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+
+        public abstract void SayName();
+
+
     }
 }

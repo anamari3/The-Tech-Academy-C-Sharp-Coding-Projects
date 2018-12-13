@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OverloadOperator_129Drill
+namespace Class_124Drill
 {
     interface IQuittable
     {
+        void Quit();
     }
 }
