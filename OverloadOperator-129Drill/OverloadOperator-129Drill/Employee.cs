@@ -20,9 +20,15 @@ namespace Class_124Drill
             throw new NotImplementedException();
         }
 
-        public static Employee operator== (Employee employee)
+        public static Employee operator== (Employee employee, Employee id)
         {
-            employee.id.Equals(employee);
+            employee.id.Equals(id);
+            return employee;
+        }
+
+        public static Employee operator!=(Employee employee, Employee id)
+        {
+            employee.id.CompareTo (id);
             return employee;
         }
 
