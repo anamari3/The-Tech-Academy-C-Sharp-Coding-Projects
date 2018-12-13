@@ -21,8 +21,11 @@ namespace TwentyOne_Tutorial
             //game += player;
             //game -= player;
 
+            //Card card = new Card(); //DEMONSTRATE ENUM
+            //card.Suit = Suits.Clubs;
+            //int underlyingValue = Convert.ToInt32(Suits.Diamonds);
 
-            Deck deck = new Deck();
+           Deck deck = new Deck();
             deck.Shuffle(3);
 
             foreach (Card card in deck.Cards)
@@ -32,5 +35,6 @@ namespace TwentyOne_Tutorial
             Console.WriteLine(deck.Cards.Count);
             Console.ReadLine();
         }
+
     }
 }

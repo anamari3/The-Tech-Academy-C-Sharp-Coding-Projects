@@ -11,27 +11,13 @@ namespace TwentyOne_Tutorial
         public Deck()
         {
             Cards = new List<Card>();
-                                    //Cards = new List<Card>(); //CREATING MORE EFFICENT SOLUTION WITH FOREACH LOOP
-                                    //Card cardOne = new Card();
-                                    //cardOne.Face = "Two";
-                                    //cardOne.Suit = "Hearts";
-                                    //Cards.Add(cardOne);
-
-            List<string> Suites = new List<string>() { "Hearts", "Diamonds", "Clubs", "Spades" };
-            List<string> Faces = new List<string>()
+            for (int i = 0; i < 13; i++)
             {
-                "Two", "Three", "Four", "Five", "Six", "Seven",
-                "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"
-
-            };
-
-            foreach (string face in Faces)
-            {
-                foreach (string suit in Suites)
+                for (int j = 0; j < 4; j++)
                 {
                     Card card = new Card();
-                    card.Suit = suit;
-                    card.Face = face;
+                    card.Face = (Face)i;
+                    card.Suit = (Suit)j;
                     Cards.Add(card);
                 }
             }
