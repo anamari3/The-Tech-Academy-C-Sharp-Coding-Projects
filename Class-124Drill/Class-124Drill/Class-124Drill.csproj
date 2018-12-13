@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E6D737A1-6755-455A-8C94-D5967AAC9375}</ProjectGuid>
+    <ProjectGuid>{19FDE34B-04E6-49B5-A0CA-D9672A62E634}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TwentyOne_Tutorial</RootNamespace>
-    <AssemblyName>TwentyOne-Tutorial</AssemblyName>
+    <RootNamespace>Class_124Drill</RootNamespace>
+    <AssemblyName>Class-124Drill</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Card.cs" />
-    <Compile Include="Dealer.cs" />
-    <Compile Include="Deck.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TwentyOneGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
