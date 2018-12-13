@@ -8,10 +8,10 @@ namespace Inherit_120Drill
 {
     public class Person
     {
-        string FirstName;
-        string LastName;
+        string FirstName { get; set; }
+        string LastName { get; set; }
       
-        public void SayName(string FirstName, string LastName)
+        public void SayName()
         {
             Console.WriteLine("Name: " + FirstName + LastName);
         }

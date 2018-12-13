@@ -16,7 +16,7 @@ namespace MethodCalling_Drill
 
         }
 
-        public decimal Math (decimal num2)
+        public int Math (decimal num2)
         {
             int new2 = decimal.ToInt32(num2);
             int result = new2 / 3;
