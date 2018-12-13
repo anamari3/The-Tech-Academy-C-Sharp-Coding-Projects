@@ -8,8 +8,9 @@ namespace Inherit_120Drill
 {
     public class Person
     {
-        string FirstName { get; set; }
-        string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
       
         public void SayName()
         {

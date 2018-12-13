@@ -8,6 +8,6 @@ namespace Inherit_120Drill
 {
     public class Employee : Person
     {
-        int id;
+        int id { get; set; }
     }
 }
