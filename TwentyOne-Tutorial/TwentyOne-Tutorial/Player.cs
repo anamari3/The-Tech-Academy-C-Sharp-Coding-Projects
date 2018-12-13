@@ -12,5 +12,17 @@ namespace TwentyOne_Tutorial
         public int Balance { get; set; }
         public string Name { get; set; }
         public bool isActivielyPlaying { get; set; }
+
+        public static Game operator+ (Game game, Player player) //overload operator
+        {
+            game.Players.Add(player);
+            return game;
+        }
+
+        public static Game operator- (Game game, Player player)
+        {
+            game.Players.Remove(player);
+            return game;
+        }
     }
 }
