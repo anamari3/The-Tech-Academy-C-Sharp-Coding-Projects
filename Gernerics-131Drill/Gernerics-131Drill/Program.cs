@@ -18,7 +18,11 @@ namespace Gernerics_131Drill
 
             foreach (Employee<string> thing in employee.things)
             {
-                Console.WriteLine(thing);
+                foreach (Employee<int> things in employ.things)
+                {
+                    Console.WriteLine(thing);
+
+                }
                 Console.ReadLine();
             }
             //Class_124Drill.IQuittable employee = new Class_124Drill.Employee();
