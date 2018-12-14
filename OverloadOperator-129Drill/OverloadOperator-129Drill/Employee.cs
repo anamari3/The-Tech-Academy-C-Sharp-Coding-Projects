@@ -22,17 +22,23 @@ namespace Class_124Drill
             throw new NotImplementedException();
         }
         
-        public static Employee operator== (Employee employee1, Employee employee2)
+        public static bool operator== (Employee employee1, Employee employee2) //bool is the return type
         {
-            employee1.id.Equals(employee2.id);
-            return true;
+            if (employee1.id == employee2.id)
+            {
+
+            }
+                return true;
         }
 
-        public static Employee operator!=(Employee employee1, Employee employee2)
+        public static bool operator!=(Employee employee1, Employee employee2)
         {
-            employee1.id.Equals (employee2);
-            return false;
-        }
+            if (employee1.id != employee2.id)
+            {
+                
+            }
+                return false;
+         }
 
 
     }
