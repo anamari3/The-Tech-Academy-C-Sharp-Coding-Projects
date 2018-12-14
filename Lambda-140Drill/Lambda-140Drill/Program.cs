@@ -40,17 +40,21 @@ namespace Lambda_140Drill
             int j = 0;
             foreach (string Fname in firstnames)
             {
-                if (firstnames =  "Joe")
+                if (Fname ==  "Joe")
                 {
                     joes.Add(new Employee(Fname, lastname[j], ids[j]));
                 }
 
             }
 
-            string joseph = employees.Where(x => x.fname == firstnames="Joe");
+            List<Employee> employeesNamedJoe = employees.Where(x => x.fname == "Joe").ToList();
 
-            int bigId = ids.Where(y => y > 5);
-            Console.WriteLine(bigId);
+            Console.WriteLine(employeesNamedJoe);
+
+
+            List<Employee> employeesGreaterFive = employees.Where(y => y.id > 5).ToList();
+
+            Console.WriteLine(employeesGreaterFive);
             Console.ReadLine();
 
             }
