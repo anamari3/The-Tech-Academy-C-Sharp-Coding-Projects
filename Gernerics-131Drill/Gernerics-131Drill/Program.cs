@@ -16,15 +16,16 @@ namespace Gernerics_131Drill
             Employee<int> employ = new Employee<int>();
             employ.things = new List<int>() { 2, 4, 6, 8, 10 };
 
-            foreach (Employee<string> thing in employee.things)
+            foreach (string thing in employee.things)
             {
-                foreach (Employee<int> things in employ.things)
+                Console.WriteLine(thing);
+            }
+            foreach (int things in employ.things)
                 {
-                    Console.WriteLine(thing);
-
+                    Console.WriteLine(things);
                 }
                 Console.ReadLine();
-            }
+            
             //Class_124Drill.IQuittable employee = new Class_124Drill.Employee();
             ////employee<T> employee = new Employee<T>();
             ////employee.firstName = "Sample";
