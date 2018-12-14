@@ -26,18 +26,25 @@ namespace Class_124Drill
         {
             if (employee1.id == employee2.id)
             {
-
-            }
                 return true;
+            }
+            else
+            {
+                return false;
+            }
+                
         }
 
         public static bool operator!=(Employee employee1, Employee employee2)
         {
             if (employee1.id != employee2.id)
             {
-                
-            }
                 return false;
+            }
+             else
+            {
+                return true;
+            }
          }
 
 
