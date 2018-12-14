@@ -49,12 +49,8 @@ namespace Lambda_140Drill
 
             List<Employee> employeesNamedJoe = employees.Where(x => x.fname == "Joe").ToList();
 
-            Console.WriteLine(employeesNamedJoe);
-
-
             List<Employee> employeesGreaterFive = employees.Where(y => y.id > 5).ToList();
 
-            Console.WriteLine(employeesGreaterFive);
             Console.ReadLine();
 
             }
