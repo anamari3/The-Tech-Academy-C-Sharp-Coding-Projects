@@ -10,30 +10,28 @@ namespace TwentyOne_Tutorial
     {
         static void Main(string[] args)
         {
-            ////Game game = new TwentyOneGame(); //POLYMORPHISM
-            ////game.Players = new List<string>() { "Jesse", "Bill", "Bob" };
-            ////game.ListPlayers();
-            ////Console.ReadLine();
-            //Game game = new TwentyOneGame();
-            //game.Players = new List<Player>();
-            //Player player = new Player();
-            //player.Name = "Jesse";
-            //game += player;
-            //game -= player;
-
-            //Card card = new Card(); //DEMONSTRATE ENUM
-            //card.Suit = Suits.Clubs;
-            //int underlyingValue = Convert.ToInt32(Suits.Diamonds);
-
-           Deck deck = new Deck();
-            deck.Shuffle(3);
-
-            foreach (Card card in deck.Cards)
+            Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name.");
+            string playerName = Console.ReadLine();
+            Console.WriteLine("And how much money did you bring today?");
+            int bank = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Hello, {0}. Would you like to join a game of 21 right now?", playerName);
+            string answer = Console.ReadLine().ToLower();
+            if (answer == "yes" || answer == "yeah" || answer == "y" || answer == "ya")
             {
-                Console.WriteLine(card.Face + " of " + card.Suit);
+                Player player = new Player(playerName, bank); //constructor (see Player.cs) and initialized it with above inputs
+                Game game = new TwentyOneGame();//polymorph to expose overload opperators we made
+                game += player;
+                player.isActivielyPlaying = true;
+                while (player.isActivielyPlaying && player.Balance > 0)
+                {
+                    game.Play();
+                }
+                game -= player;
+                Console.WriteLine("Thank you for playing!");
             }
-            Console.WriteLine(deck.Cards.Count);
-            Console.ReadLine();
+            Console.WriteLine("Feel free to look around the casino. Bye for now");
+            Console.Read();
+               
         }
 
     }
