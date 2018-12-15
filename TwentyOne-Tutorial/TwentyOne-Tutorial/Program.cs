@@ -13,7 +13,14 @@ namespace TwentyOne_Tutorial
         {
             //string text = "Here is some text";
             //File.WriteAllText(@"C:\Users\Student\testfile.txt", text); //uses a file path
-            string text = File.ReadAllText(@"C:\Users\Student\testfile.txt"); //reads text file
+            //string text = File.ReadAllText(@"C:\Users\Student\testfile.txt"); //reads text file
+
+            //DateTime dateTime = new DateTime(1995, 5, 23, 8, 32, 45);
+            //DateTime yearOfBirth = new DateTime(1995, 5, 23, 8, 32, 45);
+            //DateTime yearofGraduation = new DateTime(2013, 6, 1, 16, 34, 22);
+
+            //TimeSpan ageAtGraduation = yearofGraduation - yearOfBirth; //result in days
+            
 
 
             Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name.");
