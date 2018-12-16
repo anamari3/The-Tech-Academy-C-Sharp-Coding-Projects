@@ -13,26 +13,31 @@ namespace ExceptionHandling_165Drill
         {
             int age = 0;
 
-                try
-                {
+            try
+            {
                 Console.WriteLine("How old are you?");
                 age = Convert.ToInt32(Console.ReadLine());
                 DateTime birthYear = DateTime.Now.AddYears(-age);
                 Console.WriteLine("You were born in " + birthYear.ToString("yyyy"));
                 Console.ReadLine();
+            }
+            catch (ExceptionClass)
+            {
+                if (age <= 0)
+                {
+                    throw new ExceptionClass(string.Format("Please enter your real age."));
+                    Console.WriteLine("Please enter your real age.");
                 }
+            }
             catch (FormatException)
             {
                 Console.WriteLine("There is an error. Please contact your System Administrator");
                 Console.ReadLine();
             }
-            catch (Exception)
-                {
-                    age <= 0;
-                    Console.WriteLine("Please enter your real age.");
-                    
-                }
+
+        }           
+                
 
         }
     }
-}
+
