@@ -21,18 +21,17 @@ namespace ExceptionHandling_165Drill
                 Console.WriteLine("You were born in " + birthYear.ToString("yyyy"));
                 Console.ReadLine();
                 }
-                catch (Exception e)
+            catch (FormatException)
+            {
+                Console.WriteLine("There is an error. Please contact your System Administrator");
+                Console.ReadLine();
+            }
+            catch (Exception)
                 {
                     age <= 0;
                     Console.WriteLine("Please enter your real age.");
                     
                 }
-            catch
-            {
-                Console.WriteLine("There is an error. Please contact your System Administrator");
-                Console.ReadLine();
-            }
-
 
         }
     }
