@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOne_Tutorial
+namespace Casino
 {
     public class Player
     {
+        public Player(string name) : this(name, 100)
+        {
 
+        }
         public Player (string name, int beginningBallance) //constructors go at top of class
         {
             Hand = new List<Card>();
@@ -23,7 +26,7 @@ namespace TwentyOne_Tutorial
         public string Name { get; set; }
         public bool isActivielyPlaying { get; set; }
         public bool Stay { get; set; }
-
+        public Guid Id { get; set; }
         public bool Bet(int amount)
         {
             if (Balance - amount < 0)
