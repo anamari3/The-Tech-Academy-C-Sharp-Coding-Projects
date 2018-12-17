@@ -1,6 +1,7 @@
 ﻿using StudentManagementSystem.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,7 @@ namespace StudentManagementSystem.Controllers
 {
     public class StudentController : Controller
     {
-        private string _connectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=School;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private string _connectionString = @"Data Source=DESKTOP-KVEU7I8\SQLEXPRESS;Initial Catalog=School;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         // GET: Student
         public ActionResult Index()
         {
@@ -27,7 +28,7 @@ namespace StudentManagementSystem.Controllers
                 {
                     Student student = new Student();
                     student.Id = Convert.ToInt32(reader["Id"]);
-                    student.Firstname = reader["FirstName"].ToString();
+                    student.FirstName = reader["FirstName"].ToString();
                     student.LastName = reader["LastName"].ToString();
                     students.Add(student);
                 }
@@ -44,15 +45,15 @@ namespace StudentManagementSystem.Controllers
         public ActionResult Add(Student student)
         {
             string queryString = @"Insert into Students (FirstName, LastName) Values
-                                 (FirstName, @LastName)";
+                                 (@FirstName, @LastName)";
 
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
-                command.Parameters.Add("@FirstName", SqlDbType.VarChar);
+                command.Parameters.Add("@FirstName", SqlDbType.VarChar );
                 command.Parameters.Add("@LastName", SqlDbType.VarChar);
 
-                command.Parameters["@FirstName"].Value = student.Firstname;
+                command.Parameters["@FirstName"].Value = student.FirstName;
                 command.Parameters["@LastName"].Value = student.LastName;
 
                 connection.Open();
@@ -81,7 +82,7 @@ namespace StudentManagementSystem.Controllers
                 while (reader.Read())
                 {
                     student.Id = Convert.ToInt32(reader["Id"]);
-                    student.Firstname = reader["FirstName"].ToString();
+                    student.FirstName = reader["FirstName"].ToString();
                     student.LastName = reader["LastName"].ToString();
                 }
                 connection.Close();
@@ -97,7 +98,7 @@ namespace StudentManagementSystem.Controllers
             using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                 SqlCommand command = new SqlCommand(queryString, connection);
-                command.Parameters.Add("@id", sqlDbType.Int);
+                command.Parameters.Add("@id", SqlDbType.Int);
 
                 command.Parameters["@id"].Value = id;
 
@@ -107,7 +108,7 @@ namespace StudentManagementSystem.Controllers
                 while (reader.Read())
                 {
                     student.Id = Convert.ToInt32(reader["Id"]);
-                    student.Firstname = reader["FirstName"].ToString();
+                    student.FirstName = reader["FirstName"].ToString();
                     student.LastName = reader["LastName"].ToString();
                 }
                 connection.Close();
@@ -118,18 +119,18 @@ namespace StudentManagementSystem.Controllers
         [HttpPost]
         public ActionResult Edit(Student student)
         {
-            string queryString = @"Update Students set @FirstName, LastName=@LastName
+            string queryString = @"Update Students set FirstName=@FirstName, LastName=@LastName
                                 where Id=@Id";
 
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
-                command.Parameters.Add("@Id", sqlDbType.Int);
+                command.Parameters.Add("@Id", SqlDbType.Int);
                 command.Parameters.Add("@FirstName", SqlDbType.VarChar);
                 command.Parameters.Add("@LastName", SqlDbType.VarChar);
 
                 command.Parameters["@Id"].Value = student.Id;
-                command.Parameters["@FirstName"].Value = student.Firstname;
+                command.Parameters["@FirstName"].Value = student.FirstName;
                 command.Parameters["@LastName"].Value = student.LastName;
 
                 connection.Open();
