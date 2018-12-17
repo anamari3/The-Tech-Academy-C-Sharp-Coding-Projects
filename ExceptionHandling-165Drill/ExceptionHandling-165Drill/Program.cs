@@ -17,17 +17,19 @@ namespace ExceptionHandling_165Drill
             {
                 Console.WriteLine("How old are you?");
                 age = Convert.ToInt32(Console.ReadLine());
+                if (age <= 0)
+                {
+                    throw new ExceptionClass(string.Format("Please enter your real age."));
+                }
+
                 DateTime birthYear = DateTime.Now.AddYears(-age);
                 Console.WriteLine("You were born in " + birthYear.ToString("yyyy"));
                 Console.ReadLine();
             }
             catch (ExceptionClass)
             {
-                if (age <= 0)
-                {
-                    throw new ExceptionClass(string.Format("Please enter your real age."));
                     Console.WriteLine("Please enter your real age.");
-                }
+                Console.ReadLine();
             }
             catch (FormatException)
             {

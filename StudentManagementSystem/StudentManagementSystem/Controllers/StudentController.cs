@@ -124,7 +124,7 @@ namespace StudentManagementSystem.Controllers
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
-                command.Parameters.Add("@Id", sqlDbType.int);
+                command.Parameters.Add("@Id", sqlDbType.Int);
                 command.Parameters.Add("@FirstName", SqlDbType.VarChar);
                 command.Parameters.Add("@LastName", SqlDbType.VarChar);
 
