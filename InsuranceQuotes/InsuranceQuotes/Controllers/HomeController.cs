@@ -18,6 +18,7 @@ namespace InsuranceQuotes.Controllers
         public ActionResult InsuranceQuote(string firstName, string lastName, string emailAddress, DateTime birthDate, int carYear, string carMake,
             string carModel, bool dui, int speedingTicket, bool fullCoverage, decimal quote)
         {
+            
             if (string.IsNullOrEmpty(emailAddress))
             {
                 return View("~/Views/Shared/Error.cshtml");
@@ -26,11 +27,24 @@ namespace InsuranceQuotes.Controllers
             {
                 using (QuotesEntities db = new QuotesEntities())
                 {
+                    quote = 50m;
+
                     var request = new InsuranceQuote();
                     request.FirstName = firstName;
                     request.LastName = lastName;
                     request.EmailAddress = emailAddress;
                     request.DateOfBirth = birthDate;
+
+                    int age = Convert.ToInt16(DateTime.Now - birthDate);
+                    if (age >= 18 && age<=25 || age>100)
+                    {
+                        quote = quote + 25m;
+                    }
+                    if (age > 18)
+                    {
+                        quote = quote + 100m;
+                    }
+
                     request.CarYear = carYear;
                     request.CarMake = carMake;
                     request.CarModel = carModel;

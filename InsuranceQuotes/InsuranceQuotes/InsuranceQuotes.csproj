@@ -157,6 +157,7 @@
       <DependentUpon>CarInsuranceQuote.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\RequestVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\CarInsuranceQuote.Context.tt">
