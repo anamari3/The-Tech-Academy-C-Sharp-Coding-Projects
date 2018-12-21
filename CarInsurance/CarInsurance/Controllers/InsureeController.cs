@@ -52,8 +52,8 @@ namespace CarInsurance.Controllers
             if (ModelState.IsValid)
             {
                 db.Insurees.Add(insuree);
-                calculateQuote();
-                "Quote" = calculatedQuote;
+                insuree.Quote = calculateQuote(insuree.DateOfBirth, insuree.CarYear, insuree.CarMake, 
+                    insuree.CarModel, insuree.DUI, insuree.SpeedingTickets, insuree.CoverageType);
                 //call method to get quote (calculate) and assign quote before saving it
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -129,8 +129,8 @@ namespace CarInsurance.Controllers
         }
 
         ///EVERTHING HERE I CREATED
-        public void calculateQuote (System.DateTime DateOfBirth, int CarYear, string CarMake, string CarModel,
-                        bool DUI, int SpeedingTickets, bool CoverageType, decimal Quote)
+        public decimal calculateQuote (System.DateTime DateOfBirth, int CarYear, string CarMake, string CarModel,
+                        bool DUI, int SpeedingTickets, bool CoverageType)
         {
             int quote = 50;
             var today = DateTime.Today;
@@ -163,20 +163,24 @@ namespace CarInsurance.Controllers
 
             if (SpeedingTickets > 0)
             {
-                quote = 10 * SpeedingTickets;
+                quote = quote + (10 * SpeedingTickets);
             }
 
             if (DUI == true)
             {
-                int twentyFivePercent = Convert.ToInt32(1.25);
-                quote = quote * twentyFivePercent;
+                decimal twentyFivePercent = 1.25m;
+                decimal decQuote = Convert.ToDecimal(quote);
+                quote = Convert.ToInt32(decQuote * twentyFivePercent);
             }
                 if (CoverageType == true)
                 {
-                    int fiftyPercent = Convert.ToInt32(1.5);
-                    quote = quote * fiftyPercent;
+                    decimal fiftyPercent = 1.5m;
+                    decimal decQuote = Convert.ToDecimal(quote);
+                    quote = Convert.ToInt32(decQuote * fiftyPercent);
                 }
-                double calculatedQuote = Convert.ToDouble(quote);
+                decimal calculatedQuote = Convert.ToDecimal(quote);
+
+            return calculatedQuote;
         }
 
 
