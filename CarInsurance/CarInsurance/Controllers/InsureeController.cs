@@ -57,7 +57,7 @@ namespace CarInsurance.Controllers
             if (ModelState.IsValid)
             {
                 db.Insurees.Add(insuree);
-                insuree.Quote = calculateQuote(insuree.DateOfBirth, insuree.CarYear, insuree.CarMake, 
+                insuree.Quote = CalculateQuote(insuree.DateOfBirth, insuree.CarYear, insuree.CarMake, 
                     insuree.CarModel, insuree.DUI, insuree.SpeedingTickets, insuree.CoverageType);
                 //call method to get quote (calculate) and assign quote before saving it
                 db.SaveChanges();
@@ -134,13 +134,11 @@ namespace CarInsurance.Controllers
         }
 
         ///EVERTHING HERE I CREATED
-        public decimal calculateQuote (System.DateTime DateOfBirth, int CarYear, string CarMake, string CarModel,
+        public decimal CalculateQuote (System.DateTime DateOfBirth, int CarYear, string CarMake, string CarModel,
                         bool DUI, int SpeedingTickets, bool CoverageType)
         {
-            int quote = 50;
-            var today = DateTime.Today;
-            var age = (today.Year - DateOfBirth.Year);
-            age = Convert.ToInt16(age);
+            decimal quote = 50;
+            int age = Convert.ToInt16(today.Year - DateOfBirth.Year);
 
             if (age < 25 && age > 18 || age > 100)
             {
@@ -155,13 +153,13 @@ namespace CarInsurance.Controllers
 		    {
 			    quote = quote + 25;
 		    }
-		
-		    if (CarMake == "porche")
+
+            if (CarMake.ToLower() == "porsche")
 		    {
 			    quote = quote + 25;
 		    }
 
-            if (CarMake == "porche" && CarModel == "911 carrera")
+            if (CarMake.ToLower() == "porsche" && CarModel.ToLower() == "911 carrera")
             {
                 quote = quote + 25;
             }
@@ -171,21 +169,16 @@ namespace CarInsurance.Controllers
                 quote = quote + (10 * SpeedingTickets);
             }
 
-            if (DUI == true)
+            if (DUI) //same as (DUI == true), opposite would be If (!DUI) {} for "==false"
             {
-                decimal twentyFivePercent = 1.25m;
-                decimal decQuote = Convert.ToDecimal(quote);
-                quote = Convert.ToInt32(decQuote * twentyFivePercent);
+                quote = quote * 1.25;
             }
-                if (CoverageType == true)
-                {
-                    decimal fiftyPercent = 1.5m;
-                    decimal decQuote = Convert.ToDecimal(quote);
-                    quote = Convert.ToInt32(decQuote * fiftyPercent);
-                }
-                decimal calculatedQuote = Convert.ToDecimal(quote);
 
-            return calculatedQuote;
+            if (CoverageType) //same as (CoverageType == true)
+            {
+                    quote = quote * 1.5;
+                }
+            return quote;
         }
 
 
