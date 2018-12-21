@@ -41,6 +41,11 @@ namespace CarInsurance.Controllers
             return View();
         }
 
+        public ActionResult Admin()
+        {
+            return View(db.Insurees.ToList());
+        }
+
 
         // POST: Insuree/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
