@@ -51,7 +51,10 @@ namespace CarInsurance.Controllers
         {
             if (ModelState.IsValid)
             {
-                    db.Insurees.Add(insuree);
+                db.Insurees.Add(insuree);
+                calculateQuote();
+                "Quote" = calculatedQuote;
+                //call method to get quote (calculate) and assign quote before saving it
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -125,14 +128,66 @@ namespace CarInsurance.Controllers
             base.Dispose(disposing);
         }
 
+        ///EVERTHING HERE I CREATED
+        public void calculateQuote (System.DateTime DateOfBirth, int CarYear, string CarMake, string CarModel,
+                        bool DUI, int SpeedingTickets, bool CoverageType, decimal Quote)
+        {
+            int quote = 50;
+            var today = DateTime.Today;
+            var age = (today.Year - DateOfBirth.Year);
+            age = Convert.ToInt16(age);
+
+            if (age < 25 && age > 18 || age > 100)
+            {
+                quote = quote + 25;
+            }
+            else if (age < 18)
+            {
+                quote = quote + 100;
+            }
+
+            if (CarYear < 2000  || CarYear > 2015)
+		    {
+			    quote = quote + 25;
+		    }
+		
+		    if (CarMake == "porche")
+		    {
+			    quote = quote + 25;
+		    }
+
+            if (CarMake == "porche" && CarModel == "911 carrera")
+            {
+                quote = quote + 25;
+            }
+
+            if (SpeedingTickets > 0)
+            {
+                quote = 10 * SpeedingTickets;
+            }
+
+            if (DUI == true)
+            {
+                int twentyFivePercent = Convert.ToInt32(1.25);
+                quote = quote * twentyFivePercent;
+            }
+                if (CoverageType == true)
+                {
+                    int fiftyPercent = Convert.ToInt32(1.5);
+                    quote = quote * fiftyPercent;
+                }
+                double calculatedQuote = Convert.ToDouble(quote);
+        }
 
 
 
 
 
 
-      
 
 
-    }
+
+
+
+        }
 }
